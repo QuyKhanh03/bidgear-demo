@@ -4,6 +4,7 @@
     <!--  -->
     <!-- <bidgear-pop /> -->
      <bidgear-async />
+     
     <!-- <bidgear-sticky /> -->
     <!--  -->
     <NuxtLoadingIndicator />
