@@ -1,12 +1,24 @@
 <template>
-  <div class="min-h-xs">
-    <ClientOnly>
-      <div id="bg_7135179332"></div>
-      <scriptx
-        data-cfasync="false"
-        type="text/javascript"
-        src="//platform.bidgear.com/ads.php?domainid=7135&sizeid=17&zoneid=9332"
-      ></scriptx>
-    </ClientOnly>
+  <div>
+    <div id="ad-container"></div>
   </div>
 </template>
+
+<script setup>
+import { onMounted } from 'vue'
+
+onMounted(() => {
+  const script = document.createElement('script')
+  script.id = 'aclib'
+  script.type = 'text/javascript'
+  script.src = '//acscdn.com/script/aclib.js'
+  script.onload = () => {
+    aclib.runPop({
+      zoneId: '8470542',
+    })
+  }
+
+  document.head.appendChild(script)
+})
+</script>
+
