@@ -3,7 +3,7 @@
     <NuxtPage />
     <!--  -->
     <!-- <bidgear-pop /> -->
-     <bidgear-sync />
+     <bidgear-async />
     <!-- <bidgear-sticky /> -->
     <!--  -->
     <NuxtLoadingIndicator />
