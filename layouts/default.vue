@@ -2,7 +2,8 @@
   <main>
     <NuxtPage />
     <!--  -->
-    <bidgear-pop />
+    <!-- <bidgear-pop /> -->
+     <bidgear-sync />
     <!-- <bidgear-sticky /> -->
     <!--  -->
     <NuxtLoadingIndicator />
