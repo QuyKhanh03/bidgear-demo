@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div id="bg-ssp-9332"></div>
+    <div id="bg-ssp-9154"></div>
   </div>
 </template>
 
@@ -21,13 +21,13 @@ export default {
     scriptAclib.src = '//acscdn.com/script/aclib.js';
     document.head.appendChild(scriptAclib);
 
-    // Update the bg-ssp-9332 ID and set up pubbidgeartag
-    const bg_id = document.getElementById('bg-ssp-9332');
-    bg_id.id = 'bg-ssp-9332-' + Math.floor(Math.random() * Date.now());
+    // Update the bg-ssp-9154 ID and set up pubbidgeartag
+    const bg_id = document.getElementById('bg-ssp-9154');
+    bg_id.id = 'bg-ssp-9154-' + Math.floor(Math.random() * Date.now());
 
     window.pubbidgeartag = window.pubbidgeartag || [];
     window.pubbidgeartag.push({
-      zoneid: 9332,
+      zoneid: 9154,
       id: bg_id.id,
       wu: window.location.href
     });
