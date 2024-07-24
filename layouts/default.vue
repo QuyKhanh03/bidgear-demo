@@ -1,9 +1,13 @@
 <template>
   <main>
+    <div style="margin-bottom: 50px;">
+      <bidgear-flame-game />
+    </div>
     <NuxtPage />
     <!--  -->
     <!-- <bidgear-pop /> -->
      <bidgear-async />
+     
     <!-- <bidgear-sticky /> -->
     <!--  -->
     <NuxtLoadingIndicator />
