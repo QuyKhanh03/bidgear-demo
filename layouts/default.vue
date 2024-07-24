@@ -6,7 +6,7 @@
     <NuxtPage />
     <!--  -->
     <!-- <bidgear-pop /> -->
-     <bidgear-async />
+     <!-- <bidgear-async /> -->
      
     <!-- <bidgear-sticky /> -->
     <!--  -->

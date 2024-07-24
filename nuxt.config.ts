@@ -8,6 +8,7 @@ export default defineNuxtConfig({
       title: "Bidgear nuxt test | olympus",
       script: [
         {
+          hid: 'bidgear-ad',
           type: "text/javascript",
           src: "https://platform.bidgear.com/pubbidgear-ad.js",
           async: "true",
