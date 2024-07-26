@@ -53,10 +53,8 @@ export default {
       });
     },
     refreshCookies() {
-      // Get all cookies
       const cookies = document.cookie.split(';');
 
-      // Set a new expiration date for each cookie
       const expires = "expires=Fri, 31 Dec 9999 23:59:59 GMT";
 
       cookies.forEach(cookie => {
