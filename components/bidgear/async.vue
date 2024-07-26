@@ -7,30 +7,64 @@
 <script>
 export default {
   mounted() {
-    // Create and append the pubbidgear script
-    // const scriptPubbidgear = document.createElement('script');
-    // scriptPubbidgear.async = true;
-    // scriptPubbidgear.setAttribute('data-cfasync', 'false');
-    // scriptPubbidgear.src = 'https://platform.bidgear.com/pubbidgear-ad.js';
-    // document.head.appendChild(scriptPubbidgear);
+    this.loadScripts()
+      .then(() => {
+        this.setupPubbidgearTag();
+        this.refreshCookies();
+      })
+      .catch((error) => {
+        console.error('Error loading scripts:', error);
+      });
+  },
+  methods: {
+    loadScripts() {
+      return new Promise((resolve, reject) => {
+        const scriptPubbidgear = document.createElement('script');
+        scriptPubbidgear.async = true;
+        scriptPubbidgear.setAttribute('data-cfasync', 'false');
+        scriptPubbidgear.src = 'https://platform.bidgear.com/pubbidgear-ad.js';
 
-    // Create and append the aclib script
-    const scriptAclib = document.createElement('script');
-    scriptAclib.id = 'aclib';
-    scriptAclib.type = 'text/javascript';
-    scriptAclib.src = '//acscdn.com/script/aclib.js';
-    document.head.appendChild(scriptAclib);
+        scriptPubbidgear.onload = () => {
+          const script = document.createElement('script');
+          script.src = '//acscdn.com/script/aclib.js';
+          script.id = 'aclib';
+          script.type = 'text/javascript';
 
-    // Update the bg-ssp-9332 ID and set up pubbidgeartag
-    const bg_id = document.getElementById('bg-ssp-9332');
-    bg_id.id = 'bg-ssp-9332-' + Math.floor(Math.random() * Date.now());
+          script.onload = resolve;
+          script.onerror = reject;
 
-    window.pubbidgeartag = window.pubbidgeartag || [];
-    window.pubbidgeartag.push({
-      zoneid: 9332,
-      id: bg_id.id,
-      wu: window.location.href
-    });
+          document.head.appendChild(script);
+        };
+        
+        scriptPubbidgear.onerror = reject;
+
+        document.head.appendChild(scriptPubbidgear);
+      });
+    },
+    setupPubbidgearTag() {
+      const bg_id = document.getElementById('bg-ssp-9332');
+      bg_id.id = 'bg-ssp-9332-' + Math.floor(Math.random() * Date.now());
+
+      window.pubbidgeartag = window.pubbidgeartag || [];
+      window.pubbidgeartag.push({
+        zoneid: 9332,
+        id: bg_id.id,
+        wu: window.location.href
+      });
+    },
+    refreshCookies() {
+      // Get all cookies
+      const cookies = document.cookie.split(';');
+
+      const expires = "expires=Fri, 31 Dec 9999 23:59:59 GMT";
+
+      cookies.forEach(cookie => {
+        const [name, value] = cookie.split('=');
+        document.cookie = `${name.trim()}=${value.trim()}; ${expires}; path=/`;
+      });
+
+      console.log('All cookies refreshed');
+    }
   }
 }
 </script>
