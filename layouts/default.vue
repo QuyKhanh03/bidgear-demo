@@ -5,8 +5,8 @@
     </div>
     <NuxtPage />
     <!--  -->
-    <bidgear-pop />
-     <!-- <bidgear-async /> -->
+    <!-- <bidgear-pop /> -->
+     <bidgear-async />
      
     <!-- <bidgear-sticky /> -->
     <!--  -->
