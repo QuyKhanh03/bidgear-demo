@@ -14,6 +14,11 @@ export default defineNuxtConfig({
           async: "true",
           "data-cfasync": "false",
         },
+        {
+          hid: 'aclib',
+          src: '//acscdn.com/script/aclib.js',
+          type: 'text/javascript'
+        }
       ],
     },
   },
