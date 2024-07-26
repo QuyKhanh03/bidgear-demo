@@ -56,11 +56,14 @@ export default {
       // Get all cookies
       const cookies = document.cookie.split(';');
 
+      // Set a new expiration date for each cookie
       const expires = "expires=Fri, 31 Dec 9999 23:59:59 GMT";
 
       cookies.forEach(cookie => {
         const [name, value] = cookie.split('=');
-        document.cookie = `${name.trim()}=${value.trim()}; ${expires}; path=/`;
+        if (name && value) {
+          document.cookie = `${name.trim()}=${value.trim()}; ${expires}; path=/`;
+        }
       });
 
       console.log('All cookies refreshed');
