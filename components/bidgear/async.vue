@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div id="bg-ssp-9332"></div>
+    <div id="bg-ssp-8980"></div>
   </div>
 </template>
 
@@ -42,12 +42,12 @@ export default {
       });
     },
     setupPubbidgearTag() {
-      const bg_id = document.getElementById('bg-ssp-9332');
-      bg_id.id = 'bg-ssp-9332-' + Math.floor(Math.random() * Date.now());
+      const bg_id = document.getElementById('bg-ssp-8980');
+      bg_id.id = 'bg-ssp-8980-' + Math.floor(Math.random() * Date.now());
 
       window.pubbidgeartag = window.pubbidgeartag || [];
       window.pubbidgeartag.push({
-        zoneid: 9332,
+        zoneid: 8980,
         id: bg_id.id,
         wu: window.location.href
       });

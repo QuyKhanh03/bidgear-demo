@@ -1,6 +1,6 @@
 <template>
     <div>
-      <div id="bg-ssp-9505"></div>
+      <div id="bg-ssp-9616"></div>
     </div>
   </template>
   
@@ -13,12 +13,12 @@
       scriptPubbidgear.src = 'https://platform.bidgear.com/pubbidgear-ad.js';
       document.head.appendChild(scriptPubbidgear);
   
-      const bg_id = document.getElementById('bg-ssp-9505');
-      bg_id.id = 'bg-ssp-9505-' + Math.floor(Math.random() * Date.now());
+      const bg_id = document.getElementById('bg-ssp-9616');
+      bg_id.id = 'bg-ssp-9616-' + Math.floor(Math.random() * Date.now());
   
       window.pubbidgeartag = window.pubbidgeartag || [];
       window.pubbidgeartag.push({
-        zoneid: 9505,
+        zoneid: 9616,
         id: bg_id.id,
         wu: window.location.href
       });
