@@ -1,7 +1,7 @@
 <template>
   <main>
     <!-- <bidgear-flame-game /> -->
-     <bidgear-sticky />
+     <bidgear-async/>
     <NuxtPage />
     <NuxtLoadingIndicator />
 
